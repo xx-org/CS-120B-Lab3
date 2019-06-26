@@ -20,16 +20,14 @@ int main(void) {
 	unsigned char A;
 	unsigned char B;
 	unsigned char C = 0x00;
-    unsigned char i;
     /* Insert your solution below */
     while (1) {
-		C = 0x00;
 		A = PINA;
 		B = PINB;
-		for(i = 0; i < 8; i++){
-			if(A & (0x01<<i))
+		for(unsigned int i = 0; i < 8; i++){
+			if((A & (0x01<<i))
 				C = C + 1;
-			if(B & (0x01<<i))
+			if((B & (0x01<<i))
 				C = C + 1;
 		}
 		PORTC = C;
