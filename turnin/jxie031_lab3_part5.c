@@ -21,7 +21,7 @@ int main(void) {
 	unsigned char disabled = 0;
     /* Insert your solution below */
     while (1) {
-		weight = ((PIND <<1) + PINB0);  
+		weight = ((PIND <<1) + (PINB & 0x01));  
 		printf("%d/n", weight);
 		enabled = 0;
 		disabled = 0;
